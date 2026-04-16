@@ -1,54 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PDF Copy Page</title>
-
-    <script>
-        function copyPDF() {
-            // Change this to your real GitHub Pages link
-            const pdfLink = "sem6javasolvedslips (1).pdf";
-
-            navigator.clipboard.writeText(pdfLink)
-                .then(() => {
-                    alert("PDF link copied!");
-                });
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: blue;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        a {
-            display: block;
-            margin: 15px;
-            color: green;
-            font-size: 18px;
-        }
-    </style>
+    <title>View PDF</title>
 </head>
 
-<body>
+<body style="margin:0;">
 
-<h2>📄 My PDF File</h2>
-
-<!-- Open PDF -->
-<a href="sem6javasolvedslips (1).pdf" target="_blank">Open PDF</a>
-
-<!-- Copy PDF Link -->
-<button onclick="copyPDF()">Copy PDF Link</button>
+<iframe src="sem6javasolvedslips (1).pdf" width="100%" height="100vh" style="height:100vh; border:none;"></iframe>
 
 </body>
 </html>

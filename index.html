@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Assignment Slips</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .slip {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            color: blue;
+        }
+    </style>
+
+    <script>
+        function copyText(id) {
+            var text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text);
+            alert("Copied!");
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>📚 My 30 Assignment Slips</h1>
+
+<!-- SLIP 1 -->
+<div class="slip">
+    <p id="slip1">
+        Write a C program to implement FCFS Disk Scheduling.
+    </p>
+    <button onclick="copyText('slip1')">Copy</button>
+    <a href="slip 1.txt" target="_blank">View slip</a>
+</div>
+
+<!-- SLIP 2 -->
+<div class="slip">
+    <p id="slip2">
+        Write a program to implement SCAN Disk Scheduling.
+    </p>
+    <button onclick="copyText('slip2')">Copy</button>
+    <a href="slip2.txt" target="_blank">View slip</a>
+</div>
+
+<!-- ADD MORE SLIPS SAME WAY UP TO 30 -->
+
+</body>
+</html>

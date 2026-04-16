@@ -1,0 +1,89 @@
+1.Write a java program to read ‘N’ names of your friends, store it into HashSet and display them in ascending order
+import java.util.*;
+
+public class FriendNames {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Creating HashSet
+        HashSet<String> set = new HashSet<>();
+
+        System.out.print("Enter number of friends: ");
+        int n = sc.nextInt();
+        sc.nextLine(); // consume newline
+
+        // Input names
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            String name = sc.nextLine();
+            set.add(name);
+        }
+
+        // Display original HashSet
+        System.out.println("\nOriginal HashSet: " + set);
+
+        // Convert to List for sorting
+        List<String> list = new ArrayList<>(set);
+        Collections.sort(list);
+
+        // Display sorted names
+        System.out.println("Names in Ascending Order: " + list);
+    }
+}
+2.Design a servlet that provides information about a HTTP request from a client, 
+such as IP-Address and browser type. The servlet also provides information about the 
+server on which the servlet is running, such as the operating system type,
+and the names of currently loaded servlets.
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class NewServlet extends HttpServlet {
+
+    public void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws IOException, ServletException {
+
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+
+        // Client Information
+        String clientIP = req.getRemoteAddr();
+        String browser = req.getHeader("User-Agent");
+
+        // Server Information
+        String os = System.getProperty("os.name");
+
+        ServletContext context = getServletContext();
+        Enumeration<String> servlets = context.getServletNames();
+
+        out.println("<html><body>");
+        out.println("<h2>HTTP Request Information</h2>");
+
+        out.println("<p><b>Client IP Address:</b> " + clientIP + "</p>");
+        out.println("<p><b>Browser Type:</b> " + browser + "</p>");
+
+        out.println("<h2>Server Information</h2>");
+        out.println("<p><b>Operating System:</b> " + os + "</p>");
+
+        out.println("<h3>Loaded Servlets:</h3>");
+        while (servlets.hasMoreElements()) {
+            out.println(servlets.nextElement() + "<br>");
+        }
+
+        out.println("</body></html>");
+    }
+}
+--------------html.page-----------
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="NewServlet" method="get">
+    <h3>HTTP Request Info Demo</h3>
+    Username: <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

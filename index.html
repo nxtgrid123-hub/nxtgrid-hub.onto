@@ -1,70 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Assignment Slips</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f4f4;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .slip {
-            background: white;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 5px gray;
-        }
-        button {
-            padding: 5px 10px;
-            margin-top: 10px;
-            background: green;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        a {
-            display: block;
-            margin-top: 10px;
-            color: blue;
-        }
-    </style>
+    <title>Copy PDF</title>
 
     <script>
-        function copyText(id) {
-            var text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text);
-            alert("Copied!");
+        function copyPDF() {
+            const link = "https://yourusername.github.io/project/pdfs/sem6javasolvedslips (1).pdf";
+            navigator.clipboard.writeText(link);
+            alert("PDF link copied!");
         }
     </script>
 </head>
 
-<body>
+<body style="text-align:center; font-family:Arial;">
 
-<h1>📚 My 30 Assignment Slips</h1>
+<h2>📄 My PDF</h2>
 
-<!-- SLIP 1 -->
-<div class="slip">
-    <p id="slip1">
-        Write a C program to implement FCFS Disk Scheduling.
-    </p>
-    <button onclick="copyText('slip1')">Copy</button>
-    <a href="slip 1.txt" target="_blank">View slip</a>
-</div>
+<!-- View PDF -->
+<a href="sem6javasolvedslips (1).pdf" target="_blank">Open PDF</a>
+<br><br>
 
-<!-- SLIP 2 -->
-<div class="slip">
-    <p id="slip2">
-        Write a program to implement SCAN Disk Scheduling.
-    </p>
-    <button onclick="copyText('slip2')">Copy</button>
-    <a href="slip2.txt" target="_blank">View slip</a>
-</div>
 
-<!-- ADD MORE SLIPS SAME WAY UP TO 30 -->
+<!-- Copy Link -->
+<button onclick="copyPDF()">Copy PDF Link</button>
 
 </body>
 </html>
+           
+   
